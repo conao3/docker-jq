@@ -6,3 +6,28 @@
 
 * What is it?
 ~jq-docker~ is standalone [[https://github.com/stedolan/jq][jq]].
+
+* Dependency
+Depend Docker.
+#+begin_src bash
+  brew install docker
+  brew cask install docker
+
+  # docker start-up test
+  docker version
+#+end_src
+
+* How to use?
+Run ~jq-docker~ like as below.
+
+#+begin_src bash
+  $ echo '{"version":100}' | docker container run -i --rm conao3/jq:1.6 '.version'
+  100
+#+end_src
+
+Or, alias it.
+#+begin_src bash
+  $ alias jq1.6='docker container run -i --rm conao3/jq:1.6'
+  $ echo '{"version":100}' | jq1.6 '.version'
+  100
+#+end_src
