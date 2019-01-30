@@ -1,10 +1,22 @@
-FROM alpine:3.7
+FROM ubuntu:bionic AS build
 
-RUN apk add --no-cache --virtual=build-deps wget && \
-    wget https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && \
-    mv jq-linux64 /usr/local/bin/jq && \
-    chmod +x /usr/local/bin/jq && \
-    apk del build-deps
+MAINTAINER Naoya Yamashita (@conao3)
 
-ENTRYPOINT ["/usr/local/bin/jq", "-C"]
+ARG JQ_VER=1.6
+ARG SOURCE=https://github.com/stedolan/jq/releases/download/jq-$JQ_VER/jq-linux64
+
+WORKDIR /usr/local/bin/
+RUN apt update
+RUN apt -y install curl
+RUN curl -o /usr/local/bin/jq$JQ_VER -L $SOURCE
+RUN chmod +x /usr/local/bin/jq$JQ_VER
+
+##############################
+FROM alpine:3.8
+
+ARG JQ_VER=1.6
+
+COPY --from=build /usr/local/bin/jq$JQ_VER /usr/local/bin/
+
+ENTRYPOINT ["/usr/local/bin/jq$JQ_VER", "-C"]
 CMD [""]
