@@ -1,0 +1,8 @@
+#+author: conao
+#+date: <2019-01-31 Thu>
+
+[[https://github.com/conao3/jq-docker][https://img.shields.io/github/license/conao3/jq-docker.svg?style=flat-square]]
+[[https://github.com/conao3/github-header][https://files.conao3.com/github-header/gif/jq-docker.gif]]
+
+* What is it?
+~jq-docker~ is standalone [[https://github.com/stedolan/jq][jq]].
