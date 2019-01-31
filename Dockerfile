@@ -2,7 +2,7 @@ FROM alpine:3.8 AS build
 
 MAINTAINER Naoya Yamashita (@conao3)
 
-ARG JQ_VER=1.3
+ARG JQ_VER=1.4
 
 # jq 1.5, 1.6
 # ARG SOURCE=https://github.com/stedolan/jq/releases/download/jq-$JQ_VER/jq-linux64
