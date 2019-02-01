@@ -1,13 +1,13 @@
 #+author: conao
 #+date: <2019-01-31 Thu>
 
-[[https://github.com/conao3/jq-docker][https://img.shields.io/github/tag/conao3/jq-docker.svg?style=flat-square]]
-[[https://travis-ci.org/conao3/jq-docker][https://img.shields.io/travis/conao3/jq-docker/master.svg?style=flat-square]]
-[[https://github.com/conao3/jq-docker][https://img.shields.io/github/license/conao3/jq-docker.svg?style=flat-square]]
-[[https://github.com/conao3/github-header][https://files.conao3.com/github-header/gif/jq-docker.gif]]
+[[https://github.com/conao3/docker-jq][https://img.shields.io/github/tag/conao3/docker-jq.svg?style=flat-square]]
+[[https://travis-ci.org/conao3/docker-jq][https://img.shields.io/travis/conao3/docker-jq/master.svg?style=flat-square]]
+[[https://github.com/conao3/docker-jq][https://img.shields.io/github/license/conao3/docker-jq.svg?style=flat-square]]
+[[https://github.com/conao3/github-header][https://files.conao3.com/github-header/gif/docker-jq.gif]]
 
 * What is it?
-~jq-docker~ is standalone [[https://github.com/stedolan/jq][jq]].
+~docker-jq~ is standalone [[https://github.com/stedolan/jq][jq]].
 
 * Dependency
 Depend Docker.
@@ -20,7 +20,7 @@ Depend Docker.
 #+end_src
 
 * How to use?
-Run ~jq-docker~ like as below.
+Run ~docker-jq~ like as below.
 
 #+begin_src bash
   $ echo '{"version":100}' | docker container run -i --rm conao3/jq:1.6 '.version'
