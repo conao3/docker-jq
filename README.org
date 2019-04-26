@@ -1,7 +1,7 @@
 #+author: conao
 #+date: <2019-01-31 Thu>
 
-[[https://github.com/conao3/docker-jq][https://raw.githubusercontent.com/conao3/files/master/header/png/docker-jq.png]]
+[[https://github.com/conao3/docker-jq][https://raw.githubusercontent.com/conao3/files/master/blob/headers/png/docker-jq.png]]
 [[https://github.com/conao3/docker-jq/blob/master/LICENSE][https://img.shields.io/github/license/conao3/docker-jq.svg?style=flat-square]]
 [[https://github.com/conao3/docker-jq/releases][https://img.shields.io/github/tag/conao3/docker-jq.svg?style=flat-square]]
 [[https://travis-ci.org/conao3/docker-jq][https://img.shields.io/travis/conao3/docker-jq/master.svg?style=flat-square]]
@@ -11,7 +11,7 @@
 [[https://join.slack.com/t/conao3-support/shared_invite/enQtNTg2MTY0MjkzOTU0LTFjOTdhOTFiNTM2NmY5YTE5MTNlYzNiOTE2MTZlZWZkNDEzZmRhN2E0NjkwMWViZTZiYjA4MDUxYTUzNDZiNjY][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
 
 * Table of Contents
-- [[#background][Background]]
+- [[#description][Description]]
 - [[#install][Install]]
 - [[#usage][Usage]]
 - [[#information][Information]]
@@ -22,7 +22,7 @@
   - [[#author][Author]]
   - [[#contributors][Contributors]]
 
-* Background
+* Description
 ~docker-jq~ is standalone [[https://github.com/stedolan/jq][jq]].
 
 * Install
