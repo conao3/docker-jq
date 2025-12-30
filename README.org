@@ -1,84 +1,69 @@
-#+author: conao
+#+author: conao3
 #+date: <2019-01-31 Thu>
 
 [[https://github.com/conao3/docker-jq][https://raw.githubusercontent.com/conao3/files/master/blob/headers/png/docker-jq.png]]
 [[https://github.com/conao3/docker-jq/blob/master/LICENSE][https://img.shields.io/github/license/conao3/docker-jq.svg?style=flat-square]]
 [[https://github.com/conao3/docker-jq/releases][https://img.shields.io/github/tag/conao3/docker-jq.svg?style=flat-square]]
-[[https://travis-ci.org/conao3/docker-jq][https://img.shields.io/travis/conao3/docker-jq/master.svg?style=flat-square]]
-[[https://app.codacy.com/project/conao3/docker-jq/dashboard][https://img.shields.io/codacy/grade/83ace41d79694519ab76fadc9ae89fbe.svg?logo=codacy&style=flat-square]]
-[[https://www.patreon.com/conao3][https://img.shields.io/badge/patreon-become%20a%20patron-orange.svg?logo=patreon&style=flat-square]]
+[[https://github.com/conao3/docker-jq/actions][https://img.shields.io/github/actions/workflow/status/conao3/docker-jq/build.yml?style=flat-square]]
 [[https://twitter.com/conao_3][https://img.shields.io/badge/twitter-@conao__3-blue.svg?logo=twitter&style=flat-square]]
-[[https://join.slack.com/t/conao3-support/shared_invite/enQtNjUzMDMxODcyMjE1LTA4ZGRmOWYwZWE3NmE5NTkyZjk3M2JhYzU2ZmRkMzdiMDdlYTQ0ODMyM2ExOGY0OTkzMzZiMTNmZjJjY2I5NTM][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
+[[https://conao3-support.slack.com/join/shared_invite/zt-s6tzyo92-PtRMJYAZBfcC7O5~ZQ0JRQ][https://img.shields.io/badge/chat-on_slack-blue.svg?logo=slack&style=flat-square]]
 
 * Table of Contents
 - [[#description][Description]]
-- [[#install][Install]]
+- [[#requirements][Requirements]]
 - [[#usage][Usage]]
-- [[#information][Information]]
-  - [[#donation][Donation]]
-  - [[#community][Community]]
-  - [[#contribution][Contribution]]
-  - [[#license][License]]
-  - [[#author][Author]]
-  - [[#contributors][Contributors]]
+- [[#available-versions][Available Versions]]
+- [[#contributing][Contributing]]
+- [[#license][License]]
 
 * Description
-~docker-jq~ is standalone [[https://github.com/stedolan/jq][jq]].
+A containerized version of [[https://github.com/stedolan/jq][jq]], the lightweight and flexible command-line JSON processor.
 
-* Install
-Depend Docker.
+This Docker image provides a simple way to run specific versions of jq without installing it directly on your system.
+
+* Requirements
+Docker must be installed on your system.
 
 #+begin_src bash
-  brew install docker
-  brew cask install docker
+  # macOS
+  brew install --cask docker
 
-  # docker start-up test
+  # Verify installation
   docker version
 #+end_src
 
 * Usage
-Run ~docker-jq~ like as below.
+Run jq through Docker:
 
 #+begin_src bash
-  $ echo '{"version":100}' | docker container run -i --rm conao3/jq:1.6 '.version'
-  100
+  echo '{"version":100}' | docker container run -i --rm conao3/jq:1.6 '.version'
+  # Output: 100
 #+end_src
 
-Or, alias it.
+For convenience, create an alias:
+
 #+begin_src bash
-  $ alias jq1.6='docker container run -i --rm conao3/jq:1.6'
-  $ echo '{"version":100}' | jq1.6 '.version'
-  100
+  alias jq='docker container run -i --rm conao3/jq:1.6'
+  echo '{"version":100}' | jq '.version'
+  # Output: 100
 #+end_src
 
-Now, avairable jq:1.3, 1.4, 1.5, 1.6, but 1.3 and 1.4 is not working.
+* Available Versions
+| Version | Status    |
+|---------+-----------|
+| 1.6     | Supported |
+| 1.5     | Supported |
+| 1.4     | Legacy    |
+| 1.3     | Legacy    |
 
-* Information
-** Donation
-I love OSS and I am dreaming of working on it as *full-time* job.
+Note: Versions 1.3 and 1.4 may have compatibility issues.
 
-*With your support*, I will be able to spend more time at OSS!
+* Contributing
+Contributions are welcome. Feel free to open issues or submit pull requests.
 
-[[https://www.patreon.com/conao3][https://c5.patreon.com/external/logo/become_a_patron_button.png]]
+For discussions, join the [[https://conao3-support.slack.com/join/shared_invite/zt-s6tzyo92-PtRMJYAZBfcC7O5~ZQ0JRQ][Slack community]].
 
-** Community
-All feedback and suggestions are welcome!
+* License
+AGPL-3.0. See [[https://github.com/conao3/docker-jq/blob/master/LICENSE][LICENSE]] for details.
 
-You can use github issues, but you can also use [[https://join.slack.com/t/conao3-support/shared_invite/enQtNjUzMDMxODcyMjE1LTA4ZGRmOWYwZWE3NmE5NTkyZjk3M2JhYzU2ZmRkMzdiMDdlYTQ0ODMyM2ExOGY0OTkzMzZiMTNmZjJjY2I5NTM][Slack]]
-if you want a more casual conversation.
-
-** Contribution
-Feel free to send PR!
-
-** License
-#+begin_example
-  Affero General Public License Version 3 (AGPLv3)
-  Copyright (c) Naoya Yamashita - https://conao3.com
-  https://github.com/conao3/docker-jq/blob/master/LICENSE
-#+end_example
-
-** Author
-- Naoya Yamashita ([[https://github.com/conao3][conao3]])
-
-** Contributors
-- Not yet... Now send PR and add your name!!
+Copyright (c) Naoya Yamashita ([[https://github.com/conao3][conao3]])
